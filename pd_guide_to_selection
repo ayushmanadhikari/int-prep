@@ -1,0 +1,32 @@
+There are a variation of scenarios that needs selection particular row, column, cell or combination of these three. I will try to mention some ways to do so.
+
+1. Selection by Label
+	a. selecting column
+		-df['col_name']
+		-df.loc[:, 'col_name']
+			.first is for rows, second for column
+	b. selecting row/s
+		-df['row_index']
+		-df['row_index':'row_index']
+	c. selecting cell
+		-df.loc['row_index', 'col_name']
+		-
+	d. selecting sub-dataframe
+		1. selecting multiple(2) columns
+			-df[['col_1', 'col_2']]
+			-df.loc[:, ['col_1', 'col_2']]
+		2. selecting mutiple(2) rows
+			-df.loc['a':'b']
+		3. selecting 2 cols and 1 row
+			-df.loc['row_1', ['col_1', 'col_2']]
+		4. selecting 2 rows and 1 col
+			-df.loc[['row_1', 'row_2'], 'col_1']
+		5. selecting 2 rows and 2 cols
+			-df.loc[['row_1', 'row_2'], ['col_1', 'col_2']]
+
+
+
+2. Selection by Position
+	a. selecting column
+	b. selecting row
+	c. selecting cell

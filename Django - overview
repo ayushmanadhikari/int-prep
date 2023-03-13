@@ -1,0 +1,74 @@
+Django - overview
+
+1. Apps
+	. small pieces of software components that make up a complete website
+	. consists of 
+		- templates: style and format website
+		- urls: resource locator to navigate to different places in the website.
+		basically they let you access different view fucntions
+		- models: database models to store data
+		- views: funcitons to handle some back-end component of the website
+
+2. Facebook: -users: .photos .pages .friends
+			 -feed: .likes .comments
+			 -groupds: .members .messages
+
+3. you register the apps inside settings file of a project
+
+
+3. views: 
+	-functions that handles user requests they visit a certain url or endpoint
+	-when go to url -> some view function is responsible to provide the required data(html template or json data) to the user
+	-can also be represented with classes
+	-class based views and function based views
+
+
+4. url routing:
+	- url patterns in a list is created and we attach different paths to those views
+	- urlpatterns = [path('profile/'), views.profileView]
+
+
+6. models:
+	-class based representation of our database tables and at the core of how we design our databse
+	- class Project(models.Model):
+		title=models.charField()
+		id =models.UUIDField()
+	-class represents the database table and the atribute inside the class represents each column inside the table
+
+
+7. ORM
+	- object relational mapping
+	- get(), filter() how we interact with the database using django ORM 
+
+
+8. Admin Panel
+	- database
+
+
+9. static files
+	-add visual layers to our applicatoin... images, js
+
+10. Authentication
+	- built in methods and forms
+	- handles user registration, login, logout, password reset
+
+11. commands
+	-django-admin startproject <project-name>
+	-python manage.py startapp <app-name>
+		creates an app boiler-plate
+	-python manage.py makemigrations
+		preps db for migration
+	-python manage.py migrate
+		executes migration and updates the database
+	-pytho manage.py createsuperuser
+
+
+12. signals
+	- listen for events that occur inside our app
+	- create senders and recievers to listen for events and fire off actions when these events occur
+	-eg. user signup to send automatic email
+
+
+13. DRF
+	- tool for building web apis with django
+	- main benefit is serialization if much easier

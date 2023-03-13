@@ -27,6 +27,66 @@ There are a variation of scenarios that needs selection particular row, column, 
 
 
 2. Selection by Position
+	-For selecting using position use .iloc[] inplace of .loc[] and use index integers(0,1,2,3...) inplace of the labels. Everything else is same
+
 	a. selecting column
 	b. selecting row
 	c. selecting cell
+
+
+
+
+
+Pandas groupby with count on various combinations of columns
+1. Using groupby() and count() by column Name
+	-using groupby() we can group a dataframe by entries in any of the columns
+		df.groupby('col1')
+	-we can then call the count() on any column that will give the count for the column entries according to the groupedby entries of the grouped by column
+		df.groupby('col1')['col2'].count()
+		.here, we first groupby col1. 
+		.then, according to the specific group of col1 entries, we count the entries in col2
+
+2. Using groupby() and count() on mutiple columns
+	-we can use groupby() on multiple columns which will give the grouping by combination of those 2 columns variations
+		df.groupby(['col1', 'col2'])
+	-we can then call count() on any of the column which will give the count on that column for the combination of variation of those 2 groupedby columns
+		df.groupby(['col1', 'col2'])['col3'].count()
+
+
+
+
+Sorting
+We can sort by columns simply by using 
+	-sort_values([col_list], ascending=[bool_list])
+	
+	-the col_list provides the names of columns according to which we need to sort our dataframe and ascending provides boolean list for those respective columns in order
+
+
+
+
+
+
+
+
+
+select * from
+	(select e.*,
+	dense_rank() over(parition by dept_name order by salary desc) as rnk
+	from employee e) as x
+having x.rnk<4
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

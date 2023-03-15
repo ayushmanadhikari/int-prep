@@ -17,7 +17,7 @@ Django - overview
 
 
 3. views: 
-	-functions that handles user requests they visit a certain url or endpoint
+	-functions that handles user requests when they visit a certain url or endpoint
 	-when go to url -> some view function is responsible to provide the required data(html template or json data) to the user
 	-can also be represented with classes
 	-class based views and function based views
@@ -46,7 +46,7 @@ Django - overview
 
 
 9. static files
-	-add visual layers to our applicatoin... images, js
+	-add visual layers to our application... images, js
 
 10. Authentication
 	- built in methods and forms
@@ -66,9 +66,9 @@ Django - overview
 12. signals
 	- listen for events that occur inside our app
 	- create senders and recievers to listen for events and fire off actions when these events occur
-	-eg. user signup to send automatic email
+	- eg. user signup to send automatic email
 
 
 13. DRF
 	- tool for building web apis with django
-	- main benefit is serialization if much easier
+	- main benefit is serialization is much easier
